@@ -30,7 +30,8 @@ $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 ```
 
 #### 1.2 Installation des paquets nécessaires pour ruby 
-# installation de ruby (prend un peu de temps suivant la machine)
+
+*prend un peu de temps suivant la machine*
 
 ```bash
 # apt-get install -y build-essential libssl-dev libreadline-dev zlib1g-dev
@@ -39,7 +40,7 @@ $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 #### 1.3 configuration
 
-*pour les MAC remplacer _.bashrc_ par _.bash_profile_*
+*pour les MAC remplacer `.bashrc` par `.bash_profile`
 
 ```
 $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc 
@@ -54,10 +55,10 @@ Au préalable fermer et ré ouvrir un terminal ou faire un `source ~/.bashrc`  o
 ```
 $ rbenv install -l
 ```
-Si pas de réponse à cette question, votre configuration ne fonctionne pas. Revoir les points précédents.
+Si pas de réponse à cette commande (liste des versions dispos), votre configuration ne fonctionne pas. Revoir les points précédents.
 
 
-**installer ruby 2.6.4**
+#### 1.5 Installer ruby 2.6.4
 
 ```
 $ rbenv install 2.6.4
@@ -66,7 +67,7 @@ $ rbenv local 2.6.4
 
 
 
-### II - Installation de node 
+## II - Installation de node 
 --- 
 
 #### *sur Linux*
@@ -82,7 +83,7 @@ $ sudo apt install node
 $ brew install node 
   ```
 
-### III - Installation de grunt-cli
+## III - Installation de grunt-cli
  
 Linux / Mac
 ```shell
@@ -90,10 +91,15 @@ $ npm install -g grunt-cli
 ```
 
 
+
+
+
 ## IV - Préparation d'un projet
 ---
 
-### Création du fichier de config
+À partir d'ici, ça sera à faire pour chaque projet où vous souhaitez mettre en place **grunt**
+
+### Création du fichier de config npm
 
 dans votre projet, il vous faut créer un fichier `package.json` avec 
 ```js
@@ -106,7 +112,9 @@ dans votre projet, il vous faut créer un fichier `package.json` avec
 }
 ```
 
-Toujours dans votre projet, création d'un fichier `Gruntfile.js`
+### création d'un fichier grunt 
+
+Créer le fichier `Gruntfile.js` avec : 
 
 ```js
 module.exports = function(grunt) {
@@ -140,6 +148,7 @@ $ ls -la
 ```
 
 ## V - Installation des packages
+----
 
 On va, dans notre cas, utiliser les fonctions de `minification`, `sass`, `minification des images` et de `nettoyage`
 
@@ -171,6 +180,7 @@ $ npm install grunt-contrib-imagemin --save-dev
 ```
 
 ## VI - Configuration des packages 
+----
 
 Il va falloir expliquer à Grunt que nous voulons utliser ses packages et lui dire comment les utiliser.
 
@@ -229,6 +239,8 @@ module.exports = function(grunt) {
 ```
 
 ## VII - Préparation des dossiers / fichiers
+----
+
 La configuration actuelle nous donne que l'on va utliser un répertoire `assets` avec des sous dossiers `js`, `css`, `images` et un sous dossiers avec nos sources `src` avec là aussi les sous dossiers `js`, `css`, `images`.
 
 ```shell
